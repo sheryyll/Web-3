@@ -8,6 +8,7 @@ contract SimpleStorage{
     function setMyNumber(uint _num) public{
         myNumber = _num;
     }
+
     function getMyNumber() public view returns(uint){
         return myNumber;
     }
@@ -15,7 +16,12 @@ contract SimpleStorage{
     function setMyName(string memory _name) public{
         myName = _name; 
     }
-     function getMyName() public view returns(string memory){
+
+    function getMyName() public view returns(string memory){
         return myName;
+    }
+
+    function getLengthOfName() public view returns(uint) {
+        return bytes(myName).length;
     }
 }
