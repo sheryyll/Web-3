@@ -17,6 +17,10 @@ contract MiniAuction{
         _;
     }
 
+    constructor(){
+        owner = msg.sender;
+    }
+
     function bid() public payable{
         require(msg.value > highestBid, "Bid must be higher than current highest");
         highestBid = msg.value;
